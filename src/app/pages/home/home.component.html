@@ -1,0 +1,34 @@
+<h1>Usuarios servicio</h1>
+
+<ul class="user-list">
+  <li *ngFor="let user of users">
+    <strong class="name">{{user.id}} - {{user.name}}</strong>
+    <span class="email">{{user.email}}&nbsp;&nbsp;<span class="add" (click)="storeEmail(user)">+</span></span>
+    <button class="btn" (click)="storeUser(user)">+</button>
+  </li>
+</ul>
+
+<hr>
+
+<h1>Usuarios Firebase</h1>
+
+<ul class="user-list">
+  <li *ngFor="let user of fsUsers">
+    <strong class="name">{{user?.id}} - {{user?.name}}</strong>
+    <span class="email">{{user?.email}}</span>
+    <button class="btn" (click)="deleteUser(user.id)">-</button>
+  </li>
+</ul>
+
+<hr>
+
+<h1>Correos Firebase</h1>
+
+<ul>
+  <li *ngFor="let email of fsEmails">
+    <strong>{{email.email}}</strong>
+    &nbsp;
+    &nbsp;
+    <span class="add" (click)="deleteEmail(email.id)">-</span>
+  </li>
+</ul>
